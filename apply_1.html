@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アプリ紹介 | Tottori Event Match</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Base & Variables (共通部分) --- */
+        :root {
+            --color-primary: #0F2A4A; 
+            --color-secondary: #333333; 
+            --color-accent: #0066CC;  
+            --color-bg: #F4F6F8;      
+            --color-card: #FFFFFF;
+            --color-border: #E0E0E0;
+            --radius-l: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: var(--color-bg); color: var(--color-secondary); line-height: 1.8; font-size: 16px; overflow-x: hidden; }
+        a { text-decoration: none; color: var(--color-accent); transition: 0.3s; }
+        a:hover { opacity: 0.8; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 4%; }
+        .section { padding: 5rem 0; }
+
+        /* --- Page Header (Topに戻る部分) --- */
+        .page-header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 1.5rem 0;
+            border-bottom: 5px solid var(--color-accent);
+        }
+        .page-header a { color: white; margin-right: 1rem; }
+        .page-header h1 { font-size: 1.2rem; font-weight: 500; display: inline; }
+
+        /* --- App Hero (個別のトップ) --- */
+        .app-hero {
+            background-color: var(--color-card);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .app-hero h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        .app-hero p.tagline {
+            font-size: 1.2rem;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .tech-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .tech-tag {
+            background: var(--color-bg);
+            color: var(--color-primary); 
+            padding: 0.5rem 1rem; 
+            border-radius: 5px; 
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .app-links a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--color-accent);
+            color: white;
+            border-radius: var(--radius-l);
+            font-weight: 700;
+            margin: 0 0.5rem;
+        }
+        .app-links a:hover { background-color: var(--color-primary); }
+
+        /* --- Detail Sections (グリッドレイアウト) --- */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+        }
+        @media (max-width: 768px) {
+            .detail-grid { grid-template-columns: 1fr; }
+        }
+
+        .sidebar {
+            background-color: var(--color-card);
+            padding: 2rem;
+            border-radius: var(--radius-l);
+            border: 1px solid var(--color-border);
+            height: fit-content;
+        }
+        .sidebar h3 { color: var(--color-primary); margin-bottom: 1rem; border-bottom: 2px solid var(--color-bg); padding-bottom: 0.5rem;}
+        .sidebar-item { margin-bottom: 1rem; font-size: 0.95rem;}
+        .sidebar-item strong { display: block; color: #666; font-size: 0.8rem; margin-bottom: 0.3rem;}
+
+        .main-content h3 {
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--color-accent);
+            padding-left: 1rem;
+        }
+
+        /* 画像とテキストの配置 */
+        .feature-block {
+            background-color: var(--color-card);
+            padding: 2rem;
+            border-radius: var(--radius-l);
+            margin-bottom: 2rem;
+            border: 1px solid var(--color-border);
+        }
+        .feature-block img {
+            border-radius: var(--radius-m);
+            margin-bottom: 1rem;
+            border: 1px solid var(--color-border);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="page-header">
+        <div class="container">
+            <a href="index.html">← Portfolio Top</a>
+            <h1>Tottori Event Match 紹介ページ</h1>
+        </div>
+    </header>
+
+    <section class="app-hero">
+        <div class="container">
+            <h2>Tottori Event Match</h2>
+            <p class="tagline">地域のイベントと参加者を繋ぐ、鳥取県特化型マッチングプラットフォーム</p>
+            
+            <div class="tech-list">
+                <span class="tech-tag">Laravel 10</span>
+                <span class="tech-tag">Blade/PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">JavaScript (Vue.js)</span>
+                <span class="tech-tag">Bootstrap 5</span>
+            </div>
+
+            <div class="app-links">
+                <a href="#">🌐 App Demo</a>
+                <a href="#">🔗 GitHub Repository</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container detail-grid">
+            
+            <aside class="sidebar">
+                <h3>Project Details</h3>
+                <div class="sidebar-item">
+                    <strong>開発期間</strong>
+                    約2ヶ月（個人開発）
+                </div>
+                <div class="sidebar-item">
+                    <strong>チーム体制</strong>
+                    個人開発（設計、デザイン、実装、テスト全て担当）
+                </div>
+                <div class="sidebar-item">
+                    <strong>プログラム</strong>
+                    鳥取県デジタル人材育成プログラム 成果物
+                </div>
+                <div class="sidebar-item">
+                    <strong>こだわりの視点</strong>
+                    営業経験で培った「ヒアリング力」を活かし、地域活性化の課題解決を目指した。
+                </div>
+            </aside>
+
+            <main class="main-content">
+                
+                <h3>🎯 開発の動機と課題設定 (Motive & Challenge)</h3>
+                <p>
+                    印刷営業として地域企業と関わる中で、「イベント告知媒体が分散している」「小規模なイベント情報が埋もれやすい」という地域の課題を感じました。このアプリは、**情報を一元化**し、ユーザーの興味に基づいた**パーソナライズされたマッチング**を提供することで、この課題を解決するために開発しました。
+                </p>
+                
+                <div class="feature-block">
+                    <h4>最大の課題：イベント情報のパーソナライズ</h4>
+                    <p>
+                        ユーザーごとに最適な情報を表示するため、カテゴリと開催場所に基づく複雑なクエリ処理が必要でした。特に、MySQLでの**N+1問題**を回避し、高速なページ表示を実現することが大きな課題でした。
+                        <br>
+                        <span style="font-weight: 700; color: var(--color-accent);">解決策：</span>Laravelの**Eager Loading (withメソッド)**を徹底的に活用し、リレーション先のデータを一度に取得することで、クエリ回数を最小限に抑え、体感速度を大幅に改善しました。
+                    </p>
+                </div>
+                
+                <h3>🌟 主要機能 (Main Features)</h3>
+                <div class="feature-block">
+                    <h4>1. カスタム検索機能 </h4>
+                    <p>場所、カテゴリ、フリーワードに加え、開催前日までのイベントに絞り込む独自のフィルター機能を実装。ユーザーが求める情報を瞬時に見つけられるよう、UIにも配慮しました。</p>
+                </div>
+                <div class="feature-block">
+                    <h4>2. ユーザー認証とマイページ</h4>
+                    <p>Laravel Breezeを用いて認証機能を構築。ログイン後、ユーザーは「お気に入り登録」や「イベント主催」の申請を行うことができ、過去の活動履歴を一元管理できます。</p>
+                </div>
+
+                <h3>⚙️ 技術的なこだわり (Technical Highlights)</h3>
+                <p>堅牢性と保守性を重視し、以下の点に注力しました。これは、私がIT総合職として業務改善を行う上での誠実な姿勢を表しています。</p>
+                
+                <div class="feature-block" style="background-color: var(--color-bg);">
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 1rem;"><strong style="color: var(--color-primary);">データベース設計:</strong> イベントの多対多リレーション（カテゴリ、参加者）を**中間テーブル**で効率的に管理し、将来的な機能拡張に備えた設計を行いました。</li>
+                        <li style="margin-bottom: 1rem;"><strong style="color: var(--color-primary);">CSRF/XSS対策:</strong> Laravel標準の**セキュリティ機能**を最大限に活用し、フォーム処理では必ずCSRFトークンを埋め込み、Bladeテンプレートで自動エスケープを行いXSS対策を徹底しました。</li>
+                        <li><strong style="color: var(--color-primary);">環境構築の迅速化:</strong> Docker Composeを使用し、開発環境（PHP, MySQL, Webサーバー）を簡単に立ち上げられるよう整備しました。</li>
+                    </ul>
+                </div>
+
+                <h3>📈 今後の展望 (Future Development)</h3>
+                <p>
+                    現在のバージョンは機能の核となる部分を完成させましたが、今後は営業経験を活かしてマネタイズの仕組みを構築したいと考えています。
+                </p>
+                <p>
+                    **計画:**
+                    <ol style="margin-left: 1.5rem; margin-top: 1rem; font-size: 0.95rem;">
+                        <li>主催者向けのダッシュボード機能（イベントの閲覧数分析）。</li>
+                        <li>Vue.jsを活用した非同期コメント機能の実装。</li>
+                        <li>Google Maps APIを利用した地図上でのイベント表示。</li>
+                    </ol>
+                </p>
+
+            </main>
+        </div>
+    </section>
+
+    <footer style="background-color: var(--color-primary); color: white; padding: 3rem 0; text-align: center;">
+        <p style="opacity: 0.7;">Back to <a href="index.html" style="color: white; border-bottom: 1px solid rgba(255,255,255,0.5);">Portfolio Top</a></p>
+        <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 1rem;">&copy; 2025 Hitoshi Yagi</p>
+    </footer>
+
+</body>
+</html>
