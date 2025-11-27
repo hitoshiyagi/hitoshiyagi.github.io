@@ -130,26 +130,27 @@
     <header class="page-header">
         <div class="container">
             <a href="index.html">← Portfolio Top</a>
-            <h1>Tottori Event Match 紹介ページ</h1>
+            <h1>JobScore 紹介ページ</h1>
         </div>
     </header>
 
     <section class="app-hero">
         <div class="container">
-            <h2>Tottori Event Match</h2>
+            <h2>JobScore</h2>
             <p class="tagline">地域のイベントと参加者を繋ぐ、鳥取県特化型マッチングプラットフォーム</p>
             
             <div class="tech-list">
                 <span class="tech-tag">Laravel 10</span>
                 <span class="tech-tag">Blade/PHP</span>
                 <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">JavaScript (Vue.js)</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Chart.js</span>
                 <span class="tech-tag">Bootstrap 5</span>
             </div>
 
             <div class="app-links">
-                <a href="#">🌐 App Demo</a>
-                <a href="#">🔗 GitHub Repository</a>
+                <a href="#">App Demo</a>
+                <a href="#">GitHub Repository</a>
             </div>
         </div>
     </section>
@@ -161,7 +162,7 @@
                 <h3>Project Details</h3>
                 <div class="sidebar-item">
                     <strong>開発期間</strong>
-                    約2ヶ月（個人開発）
+                    約1週間（個人開発）
                 </div>
                 <div class="sidebar-item">
                     <strong>チーム体制</strong>
@@ -173,38 +174,52 @@
                 </div>
                 <div class="sidebar-item">
                     <strong>こだわりの視点</strong>
-                    営業経験で培った「ヒアリング力」を活かし、地域活性化の課題解決を目指した。
+                    <p>転職活動で「どの企業が自分に合うのか」が直感では分かりにくい課題に対して、
+主観ではなく”数値 × 可視化”で判断できる仕組みをつくることにこだわりました。</p>
+
+<p>営業経験で培ったヒアリング力を生かし、求職者が迷いやすいポイント（給与・雰囲気・ワークライフバランス・人間関係など）を要素化。
+ユーザー自身が評価基準を自由に作り、企業をスコアリングできる設計にしています。</p>
                 </div>
             </aside>
 
             <main class="main-content">
                 
-                <h3>🎯 開発の動機と課題設定 (Motive & Challenge)</h3>
+                <h3>開発の動機と課題設定 (Motive & Challenge)</h3>
                 <p>
-                    印刷営業として地域企業と関わる中で、「イベント告知媒体が分散している」「小規模なイベント情報が埋もれやすい」という地域の課題を感じました。このアプリは、**情報を一元化**し、ユーザーの興味に基づいた**パーソナライズされたマッチング**を提供することで、この課題を解決するために開発しました。
-                </p>
-                
+転職活動において、企業比較が「断片的なメモ」や「曖昧な印象」で管理されがちだと感じていました。
+実際に自分自身も選考を進める中で、
+<li>会社ごとに感じた印象を整理しづらい</li>
+<li>自分の転職軸を点数化して比較したい</li>
+<li>現職と希望企業を可視化して判断したい</li>
+という課題を強く実感。
+
+<p>そこで JobScore は、
+自己分析（転職軸）＋企業評価（スコア）＋可視化（レーダーチャート）
+を組み合わせ、"論理的に転職判断できるツール" として開発しました。</p>
+
                 <div class="feature-block">
-                    <h4>最大の課題：イベント情報のパーソナライズ</h4>
+                    <h4>最大の課題：評価基準 × 企業スコアの動的管理</h4>
                     <p>
                         ユーザーごとに最適な情報を表示するため、カテゴリと開催場所に基づく複雑なクエリ処理が必要でした。特に、MySQLでの**N+1問題**を回避し、高速なページ表示を実現することが大きな課題でした。
                         <br>
                         <span style="font-weight: 700; color: var(--color-accent);">解決策：</span>Laravelの**Eager Loading (withメソッド)**を徹底的に活用し、リレーション先のデータを一度に取得することで、クエリ回数を最小限に抑え、体感速度を大幅に改善しました。
                     </p>
                 </div>
-                
-                <h3>🌟 主要機能 (Main Features)</h3>
+
+                <h3>主要機能 (Main Features)</h3>
                 <div class="feature-block">
-                    <h4>1. カスタム検索機能 </h4>
-                    <p>場所、カテゴリ、フリーワードに加え、開催前日までのイベントに絞り込む独自のフィルター機能を実装。ユーザーが求める情報を瞬時に見つけられるよう、UIにも配慮しました。</p>
+                    <h4>1. 企業スコアリング機能 </h4>
+                    <div class="li">自分で作成した基準に対して企業を評価</div>
+                    <div class="li">点数（1〜10）を入力すると自動で総合スコアを算出</div>
+                    <div class="li">レーダーチャートで視覚的に比較可能</div>
                 </div>
-                <div class="feature-block">
+                <!-- <div class="feature-block">
                     <h4>2. ユーザー認証とマイページ</h4>
                     <p>Laravel Breezeを用いて認証機能を構築。ログイン後、ユーザーは「お気に入り登録」や「イベント主催」の申請を行うことができ、過去の活動履歴を一元管理できます。</p>
-                </div>
+                </div> -->
 
-                <h3>⚙️ 技術的なこだわり (Technical Highlights)</h3>
-                <p>堅牢性と保守性を重視し、以下の点に注力しました。これは、私がIT総合職として業務改善を行う上での誠実な姿勢を表しています。</p>
+                <!-- <h3>技術的なこだわり (Technical Highlights)</h3>
+                <p>堅牢性と保守性を重視し、以下の点に注力しました。これは、私がIT総合職として業務改善を行う上での誠実な姿勢を表しています。</p> -->
                 
                 <div class="feature-block" style="background-color: var(--color-bg);">
                     <ul style="list-style-type: none; padding-left: 0;">
@@ -214,16 +229,16 @@
                     </ul>
                 </div>
 
-                <h3>📈 今後の展望 (Future Development)</h3>
+                <h3>今後の展望 (Future Development)</h3>
                 <p>
-                    現在のバージョンは機能の核となる部分を完成させましたが、今後は営業経験を活かしてマネタイズの仕組みを構築したいと考えています。
+                    現在のバージョンは機能の核となる部分を完成させましたが、今後はより自分の転職軸に合わせる仕組みを構築したいと考えています。
                 </p>
                 <p>
-                    **計画:**
+                    計画:
                     <ol style="margin-left: 1.5rem; margin-top: 1rem; font-size: 0.95rem;">
-                        <li>主催者向けのダッシュボード機能（イベントの閲覧数分析）。</li>
-                        <li>Vue.jsを活用した非同期コメント機能の実装。</li>
-                        <li>Google Maps APIを利用した地図上でのイベント表示。</li>
+                        <li>会社見学の感想</li>
+                        <li>面接の印象</li>
+                        <li>添付資料（URLやPDFの保存）</li>
                     </ol>
                 </p>
 
